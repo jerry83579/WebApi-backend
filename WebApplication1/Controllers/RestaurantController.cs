@@ -9,7 +9,7 @@ using WebApplication1.Models;
 using Microsoft.AspNetCore.Diagnostics;
 using System.Net;
 using System.Collections;
-
+using Microsoft.EntityFrameworkCore.Storage;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,10 +20,10 @@ namespace WebApplication1.Controllers
     public class RestaurantController : ControllerBase
     {
         private readonly RestaurantContext _context;
+
         public RestaurantController(RestaurantContext context)
         {
             _context = context;
-
         }
 
         // GET api
@@ -40,7 +40,6 @@ namespace WebApplication1.Controllers
         //    return Data;
         //}
 
-
         [Route("get/export")]
         [HttpGet]
         public IEnumerable GetOds()
@@ -50,8 +49,6 @@ namespace WebApplication1.Controllers
 
             return result;
         }
-
-
 
         [Route("get/info")]
         [HttpGet]
@@ -66,7 +63,7 @@ namespace WebApplication1.Controllers
         // POST api
         [Route("post/info")]
         [HttpPost]
-        public Info Post([FromBody]requestBody value)
+        public Info Post([FromBody] requestBody value)
         {
             var Data = new Info
             {
@@ -74,21 +71,22 @@ namespace WebApplication1.Controllers
                 Address = value.Address,
                 Phone = value.Phone,
                 Food = value.Food,
+                Longitude = value.Longitude,
+                Lat = value.Lat,
                 Location = new Point((double)value.Lat, (double)value.Longitude)
                 {
-                    SRID = 4326
+                    SRID = 3826
                 }
             };
             _context.Info.Add(Data);
             _context.SaveChanges();
-
             return Data;
         }
 
         //PUT api
         [Route("put/info/{id}")]
         [HttpPut]
-        public Info Put([FromBody]requestBody value, int id)
+        public Info Put([FromBody] requestBody value, int id)
         {
             var result = _context.Info;
 
@@ -97,23 +95,30 @@ namespace WebApplication1.Controllers
             Data.Phone = value.Phone;
             Data.Address = value.Address;
             Data.Food = value.Food;
-
+            Data.Longitude = value.Longitude;
+            Data.Lat = value.Lat;
+            Data.Location = new Point((double)value.Lat, (double)value.Longitude)
+            {
+                SRID = 3826
+            };
             _context.SaveChanges();
 
             return Data;
         }
+
         // DELETE api
-        [Route("delete/info/{id}")]
+        [Route("delete/info/{ids}")]
         [HttpDelete]
-        public Info Delete(int id)
+        public void Delete(string ids)
         {
+            string[] roomIds = ids.Split(",");
             var result = _context.Info;
-
-            var Data = result.Single(x => x.Id == id);
-            _context.Info.Remove(Data);
+            foreach (string id in roomIds)
+            {
+                var Data = result.Single(x => x.Id == Convert.ToInt32(id));
+                _context.Info.Remove(Data);
+            }
             _context.SaveChanges();
-
-            return Data;
         }
     }
 }

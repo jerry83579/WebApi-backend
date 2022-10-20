@@ -11,6 +11,7 @@ using System.IO;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
+using Microsoft.Extensions.Options;
 
 namespace WebApi
 {
@@ -34,14 +35,9 @@ namespace WebApi
                builder =>
                {
                    builder
-                   //.WithOrigins("http://localhost:4456") //AllowSpecificOrigins;
-                   //.WithOrigins("http://localhost:4456", "http://localhost:4457") //AllowMultipleOrigins;
-                   .AllowAnyOrigin() //AllowAllOrigins;
-
-                   //.WithMethods("GET") //AllowSpecificMethods;
+                   .AllowAnyOrigin() 
                    //.WithMethods("GET", "PUT") //AllowSpecificMethods;
                    .AllowAnyMethod() //AllowAllMethods;
-
                    //.WithHeaders("Accept", "Content-type", "Origin", "X-Custom-Header");  //AllowSpecificHeaders;
                    .AllowAnyHeader(); //AllowAllHeaders;
                })
@@ -66,7 +62,7 @@ namespace WebApi
                 {
                     Version = "v1",
                     Title = "Web Api",
-                    Description = "ASP.NET Core Web API For Vue",
+                    Description = "Web API",
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
@@ -91,7 +87,7 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {   
-            if (env.IsDevelopment())
+            if (env.IsDevelopment() || env.IsProduction())
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -106,9 +102,18 @@ namespace WebApi
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.)
             app.UseSwaggerUI(option =>
             {
-                option.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                if (env.IsDevelopment())
+                {
+                    string swaggerJsonBasePath = string.IsNullOrWhiteSpace(option.RoutePrefix) ? "." : "..";
+                    option.SwaggerEndpoint($"{swaggerJsonBasePath}/swagger/v1/swagger.json", "My API");
+                }
+                else
+                {
+                    // To deploy on IIS
+                    string swaggerJsonBasePath = string.IsNullOrWhiteSpace(option.RoutePrefix) ? "." : "..";
+                    option.SwaggerEndpoint($"{swaggerJsonBasePath}/swagger/v1/swagger.json", "My API");
+                }
             });
-
 
             app.UseHttpsRedirection();
 
