@@ -4,6 +4,8 @@ D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\a
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\WebApplication1.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\WebApplication1.runtimeconfig.json
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\WebApplication1.pdb
+D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\System.Net.Http.Formatting.dll
+D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\System.Web.Http.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Razor.Language.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Bcl.HashCode.dll
@@ -49,6 +51,7 @@ D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\N
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\NetTopologySuite.IO.GeoJSON4STJ.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\NetTopologySuite.IO.SqlServerBytes.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.dll
+D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.Bson.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\NuGet.Frameworks.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\ProjNET.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll

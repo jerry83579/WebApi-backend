@@ -23,25 +23,24 @@ namespace WebApi
         }
 
         public IConfiguration Configuration { get; }
-   
-            // This method gets called by the runtime. Use this method to add services to the container.
 
-            public void ConfigureServices(IServiceCollection services)
-            {
+        // This method gets called by the runtime. Use this method to add services to the container.
 
+        public void ConfigureServices(IServiceCollection services)
+        {
             //enble cors
             services.AddCors(
                options => options.AddPolicy("AllowCors",
                builder =>
                {
                    builder
-                   .AllowAnyOrigin() 
+                   .AllowAnyOrigin()
                    //.WithMethods("GET", "PUT") //AllowSpecificMethods;
                    .AllowAnyMethod() //AllowAllMethods;
                    //.WithHeaders("Accept", "Content-type", "Origin", "X-Custom-Header");  //AllowSpecificHeaders;
                    .AllowAnyHeader(); //AllowAllHeaders;
                })
-  
+
              );
 
             services.AddDbContext<RestaurantContext>(opt =>
@@ -50,12 +49,11 @@ namespace WebApi
 
             services.AddSwaggerGen();
 
-            services.AddControllers().AddJsonOptions(options => {
+            services.AddControllers().AddJsonOptions(options =>
+            {
                 options.JsonSerializerOptions.Converters.Add(new NetTopologySuite.IO.Converters.GeoJsonConverterFactory());
-
             });
 
-        
             services.AddSwaggerGen(option =>
             {
                 option.SwaggerDoc("v1", new OpenApiInfo
@@ -86,7 +84,7 @@ namespace WebApi
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {   
+        {
             if (env.IsDevelopment() || env.IsProduction())
             {
                 app.UseDeveloperExceptionPage();

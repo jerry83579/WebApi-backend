@@ -145,3 +145,6 @@ D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\WebApplicati
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\WebApplication1.xml
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\WebApplication1.pdb
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\WebApplication1.genruntimeconfig.cache
+D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\System.Web.Http.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll

@@ -26,20 +26,6 @@ namespace WebApplication1.Controllers
             _context = context;
         }
 
-        // GET api
-        //[Route("get/info")]
-        //[HttpGet]
-        //public Info Get(int value)
-        //{
-        //    //從資料庫撈資料
-        //    var result = _context.Info;
-
-        //    //篩選資料
-        //    var Data = result.Single(w => w.Id == value);
-
-        //    return Data;
-        //}
-
         [Route("get/export")]
         [HttpGet]
         public IEnumerable GetOds()
