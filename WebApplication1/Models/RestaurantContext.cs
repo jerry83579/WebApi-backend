@@ -25,8 +25,7 @@ namespace WebApplication1.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-
-                optionsBuilder.UseSqlServer("Server=USER79-PC;Database=Restaurant;Trusted_Connection=True;User ID=taolin/Jerry;Password=1023", x => x.UseNetTopologySuite());
+                optionsBuilder.UseSqlServer("Server=USER79-PC;Database=Restaurant;Trusted_Connection=True;MultipleActiveResultSets=true;User ID=taolin/Jerry;Password=1023", x => x.UseNetTopologySuite());
             }
         }
 
@@ -38,24 +37,20 @@ namespace WebApplication1.Models
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Food)
-                    .HasMaxLength(20)
+                entity.Property(e => e.Category)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Location).HasColumnType("geometry");
 
-                entity.Property(e => e.Name)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.Phone)
                     .HasMaxLength(20)
                     .IsUnicode(false);
+
+                entity.Property(e => e.Price)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
-
-            OnModelCreatingPartial(modelBuilder);
         }
-
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

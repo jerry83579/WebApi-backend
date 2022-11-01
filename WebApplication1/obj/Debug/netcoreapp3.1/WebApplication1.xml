@@ -4,5 +4,17 @@
         <name>WebApplication1</name>
     </assembly>
     <members>
+        <member name="M:WebApplication1.Controllers.RestaurantController.Get">
+            <summary>
+            取得餐廳資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.RestaurantController.GetCompoundQueryData(System.String)">
+            <summary>
+            複合式查詢
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

@@ -1,15 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NetTopologySuite.Geometries;
 using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using WebApplication1.Models;
-using Microsoft.AspNetCore.Diagnostics;
-using System.Net;
-using System.Collections;
-using Microsoft.EntityFrameworkCore.Storage;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -26,37 +21,30 @@ namespace WebApplication1.Controllers
             _context = context;
         }
 
-        [Route("get/export")]
-        [HttpGet]
-        public IEnumerable GetOds()
-        {
-            //從資料庫撈資料
-            var result = _context.Info;
-
-            return result;
-        }
-
+        /// <summary>
+        /// 取得餐廳資訊
+        /// </summary>
+        /// <returns></returns>
         [Route("get/info")]
         [HttpGet]
         public IEnumerable Get()
         {
             //從資料庫撈資料
-            var result = _context.Info;
-
+            DbSet<Info> result = _context.Info;
             return result;
         }
 
         // POST api
         [Route("post/info")]
         [HttpPost]
-        public Info Post([FromBody] requestBody value)
+        public Info Post([FromBody] Info value)
         {
-            var Data = new Info
+            Info Data = new Info
             {
-                Name = value.Name,
+                Category = value.Category,
                 Address = value.Address,
                 Phone = value.Phone,
-                Food = value.Food,
+                Price = value.Price,
                 Longitude = value.Longitude,
                 Lat = value.Lat,
                 Location = new Point((double)value.Lat, (double)value.Longitude)
@@ -69,18 +57,32 @@ namespace WebApplication1.Controllers
             return Data;
         }
 
+        /// <summary>
+        /// 複合式查詢
+        /// </summary>
+        /// <returns></returns>
+        [Route("get/CompoundQueryData/{value}")]
+        [HttpGet]
+        public IEnumerable GetCompoundQueryData(string value)
+        {
+            DbSet<Info> result = _context.Info;
+            string[] roomvalue = value.Split(",");
+            var data = result.Where(x => x.Address.Contains(roomvalue[0]))
+           .Where(x => x.Category.Contains(roomvalue[1]) && !String.IsNullOrEmpty(roomvalue[1]));
+            return data;
+        }
+
         //PUT api
         [Route("put/info/{id}")]
         [HttpPut]
-        public Info Put([FromBody] requestBody value, int id)
+        public Info Put([FromBody] Info value, int id)
         {
-            var result = _context.Info;
-
-            var Data = result.Single(x => x.Id == id);
-            Data.Name = value.Name;
+            DbSet<Info> result = _context.Info;
+            Info Data = result.Single(x => x.Id == id);
+            Data.Category = value.Category;
             Data.Phone = value.Phone;
             Data.Address = value.Address;
-            Data.Food = value.Food;
+            Data.Price = value.Price;
             Data.Longitude = value.Longitude;
             Data.Lat = value.Lat;
             Data.Location = new Point((double)value.Lat, (double)value.Longitude)
@@ -88,7 +90,6 @@ namespace WebApplication1.Controllers
                 SRID = 3826
             };
             _context.SaveChanges();
-
             return Data;
         }
 
@@ -98,10 +99,10 @@ namespace WebApplication1.Controllers
         public void Delete(string ids)
         {
             string[] roomIds = ids.Split(",");
-            var result = _context.Info;
+            DbSet<Info> result = _context.Info;
             foreach (string id in roomIds)
             {
-                var Data = result.Single(x => x.Id == Convert.ToInt32(id));
+                Info Data = result.Single(x => x.Id == Convert.ToInt32(id));
                 _context.Info.Remove(Data);
             }
             _context.SaveChanges();
