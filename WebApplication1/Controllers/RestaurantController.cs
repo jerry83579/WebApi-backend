@@ -34,6 +34,23 @@ namespace WebApplication1.Controllers
             return result;
         }
 
+        /// <summary>
+        /// 複合式查詢
+        /// </summary>
+        /// <returns></returns>
+        [Route("get/complexQuery/{value}")]
+        [HttpGet]
+        public IEnumerable GetCompoundQuery(string value)
+        {
+            DbSet<Info> result = _context.Info;
+            string[] valueArray = value.Split(",");
+            var price = valueArray[2] == "0" ? 0 : Convert.ToInt32(valueArray[2]);
+            var data = result.Where(x => x.Address.Contains(valueArray[0]) || valueArray[0] == "default").
+            Where(x => x.Category.Contains(valueArray[1]) || valueArray[1] == "default").
+            Where(x => x.Price < price || price == 0);
+            return data;
+        }
+
         // POST api
         [Route("post/info")]
         [HttpPost]
@@ -55,23 +72,6 @@ namespace WebApplication1.Controllers
             _context.Info.Add(Data);
             _context.SaveChanges();
             return Data;
-        }
-
-        /// <summary>
-        /// 複合式查詢
-        /// </summary>
-        /// <returns></returns>
-        [Route("get/complexQuery/{value}")]
-        [HttpGet]
-        public IEnumerable GetCompoundQuery(string value)
-        {
-            DbSet<Info> result = _context.Info;
-            string[] valueArray = value.Split(",");
-            var price = valueArray[2] == "0" ? 0 : Convert.ToInt32(valueArray[2]);
-            var data = result.Where(x => x.Address.Contains(valueArray[0]) || valueArray[0] == "default").
-            Where(x => x.Category.Contains(valueArray[1]) || valueArray[1] == "default").
-            Where(x => x.Price < price || price == 0);
-            return data;
         }
 
         //PUT api
