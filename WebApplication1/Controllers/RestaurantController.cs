@@ -61,14 +61,16 @@ namespace WebApplication1.Controllers
         /// 複合式查詢
         /// </summary>
         /// <returns></returns>
-        [Route("get/CompoundQueryData/{value}")]
+        [Route("get/complexQuery/{value}")]
         [HttpGet]
-        public IEnumerable GetCompoundQueryData(string value)
+        public IEnumerable GetCompoundQuery(string value)
         {
             DbSet<Info> result = _context.Info;
-            string[] roomvalue = value.Split(",");
-            var data = result.Where(x => x.Address.Contains(roomvalue[0]))
-           .Where(x => x.Category.Contains(roomvalue[1]) && !String.IsNullOrEmpty(roomvalue[1]));
+            string[] valueArray = value.Split(",");
+            var price = valueArray[2] == "0" ? 0 : Convert.ToInt32(valueArray[2]);
+            var data = result.Where(x => x.Address.Contains(valueArray[0]) || valueArray[0] == "default").
+            Where(x => x.Category.Contains(valueArray[1]) || valueArray[1] == "default").
+            Where(x => x.Price < price || price == 0);
             return data;
         }
 
