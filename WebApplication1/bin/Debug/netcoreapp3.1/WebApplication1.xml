@@ -10,7 +10,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:WebApplication1.Controllers.RestaurantController.GetCompoundQuery(System.String)">
+        <member name="M:WebApplication1.Controllers.RestaurantController.GetCompoundQuery(System.String[])">
             <summary>
             複合式查詢
             </summary>

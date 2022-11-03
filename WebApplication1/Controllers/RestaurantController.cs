@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NetTopologySuite.Geometries;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using WebApplication1.Models;
 
@@ -38,15 +39,15 @@ namespace WebApplication1.Controllers
         /// 複合式查詢
         /// </summary>
         /// <returns></returns>
-        [Route("get/complexQuery/{value}")]
-        [HttpGet]
-        public IEnumerable GetCompoundQuery(string value)
+        [Route("post/complexQuery")]
+        [HttpPost]
+        public IEnumerable GetCompoundQuery([FromBody] string[] queryArray)
         {
             DbSet<Info> result = _context.Info;
-            string[] valueArray = value.Split(",");
-            var price = valueArray[2] == "0" ? 0 : Convert.ToInt32(valueArray[2]);
-            var data = result.Where(x => x.Address.Contains(valueArray[0]) || valueArray[0] == "default").
-            Where(x => x.Category.Contains(valueArray[1]) || valueArray[1] == "default").
+            var price = queryArray[2] == "0" ? 0 : Convert.ToInt32(queryArray[3]);
+            var searchData = result.ToList().Where(x => x.Category.Contains(queryArray[0]) || x.Price.ToString().Contains(queryArray[0]) || x.Phone.Contains(queryArray[0]) || x.Address.Contains(queryArray[0]) || (x.Lat.ToString() + "," + x.Longitude).Contains(queryArray[0]) || queryArray[0] == "default");
+            var data = searchData.Where(x => x.Address.Contains(queryArray[1]) || queryArray[1] == "default").
+            Where(x => x.Category.Contains(queryArray[2]) || queryArray[2] == "default").
             Where(x => x.Price < price || price == 0);
             return data;
         }
