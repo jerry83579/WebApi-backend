@@ -45,7 +45,7 @@ namespace WebApi
 
              );
 
-            services.AddDbContext<RestaurantContext>(opt =>
+            services.AddDbContext<ShopController>(opt =>
             opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), x => x.UseNetTopologySuite())
             );
 
@@ -62,18 +62,13 @@ namespace WebApi
                 {
                     Version = "v1",
                     Title = "Web Api",
-                    Description = "Web API",
-                    TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
                         Name = "Shayne Boyer",
                         Email = string.Empty,
-                        Url = new Uri("https://twitter.com/spboyer"),
                     },
                     License = new OpenApiLicense
                     {
-                        Name = "Use under LICX",
-                        Url = new Uri("https://example.com/license"),
                     }
                 });
 
