@@ -28,11 +28,11 @@
             </summary>
             <param name="ids">單個或多個店家編號，例如: id1,id2,id3...</param>
         </member>
-        <member name="M:WebApplication1.Controllers.ShopController.UploadImg(WebApplication1.Models.Info)">
+        <member name="M:WebApplication1.Controllers.ShopController.UploadImgAsync(Microsoft.AspNetCore.Http.IFormFile,System.Int32)">
             <summary>
             上傳照片
             </summary>
-            <param name="value">店家參數</param>
+            <param name="files">表單數據</param>
             <returns></returns>
         </member>
         <member name="M:WebApplication1.Controllers.ShopController.Post(WebApplication1.Models.Info)">

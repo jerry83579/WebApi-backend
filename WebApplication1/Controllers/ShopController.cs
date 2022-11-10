@@ -7,8 +7,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Web.Http.Results;
 using WebApplication1.Models;
+using static System.Net.WebRequestMethods;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -44,7 +48,7 @@ namespace WebApplication1.Controllers
             DbSet<Info> result = _context.Info;
             var data = result.Single(x => x.Id == id);
             string imgUrl = data.ImgUrl;
-            string path = string.Format(@"{0}\{1}", this._memberConfig.ImgPath, imgUrl);
+            string path = string.Format(@"{0}\{1}", _memberConfig.ImgPath, imgUrl);
             if (System.IO.File.Exists(path))
             {
                 var image = System.IO.File.OpenRead(path);
@@ -68,6 +72,7 @@ namespace WebApplication1.Controllers
         {
             DbSet<Info> result = _context.Info;
             Info Data = result.Single(x => x.Id == id);
+            string path = string.Format(@"{0}\{1}", _memberConfig.ImgPath, Data.ImgUrl);
             Data.ImgUrl = null;
             _context.SaveChanges();
             string notFoundPath = string.Format(@"{0}", _memberConfig.NotFoundPath);
@@ -109,12 +114,36 @@ namespace WebApplication1.Controllers
         /// <summary>
         /// 上傳照片
         /// </summary>
-        /// <param name="value">店家參數</param>
+        /// <param name="files">表單數據</param>
         /// <returns></returns>
-        [Route("post/uploadImg")]
+        [Route("post/uploadImg/{id}")]
         [HttpPost]
-        public void UploadImg([FromBody] Info value)
+        public async Task<FileStreamResult> UploadImgAsync([FromForm] IFormFile files, int id)
         {
+            DbSet<Info> result = _context.Info;
+            // 讀取照片資料流存取並創建照片到伺服器位置
+            string fileName = files.FileName;
+            string path = string.Format(@"{0}\{1}", _memberConfig.ImgPath, fileName);
+            try
+            {
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await files.CopyToAsync(stream);
+                }
+                // 上傳新的照片路徑到資料庫
+                var data = result.Single(x => x.Id == id);
+                data.ImgUrl = fileName;
+                _context.SaveChanges();
+                // 回傳照片
+                var image = System.IO.File.OpenRead(path);
+                return File(image, "image/jpeg");
+            }
+            catch
+            {
+                path = string.Format(@"{0}\{1}", _memberConfig.NotFoundPath);
+                var image = System.IO.File.OpenRead(path);
+                return File(image, "image/jpeg");
+            }
         }
 
         /// <summary>
