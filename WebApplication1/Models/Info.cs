@@ -59,7 +59,11 @@ namespace WebApplication1.Models
         /// <summary>
         /// 座標
         /// </summary>
-        [Required]
         public Geometry Location { get; set; }
+
+        /// <summary>
+        /// 圖片路徑
+        /// </summary>
+        public string ImgUrl { get; set; }
     }
 }

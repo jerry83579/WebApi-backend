@@ -4,6 +4,18 @@
         <name>WebApplication1</name>
     </assembly>
     <members>
+        <member name="M:WebApplication1.Controllers.ShopController.GetPreviewImg(System.Int32)">
+            <summary>
+            預覽照片
+            </summary>
+            <param name="id">圖片對應的店家編號</param>
+        </member>
+        <member name="M:WebApplication1.Controllers.ShopController.DeleteImg(System.Int32)">
+            <summary>
+            刪除照片
+            </summary>
+            <param name="id">圖片對應的店家編號</param>
+        </member>
         <member name="M:WebApplication1.Controllers.ShopController.Get">
             <summary>
             讀取店家資料
@@ -15,6 +27,13 @@
             刪除店家資料
             </summary>
             <param name="ids">單個或多個店家編號，例如: id1,id2,id3...</param>
+        </member>
+        <member name="M:WebApplication1.Controllers.ShopController.UploadImg(WebApplication1.Models.Info)">
+            <summary>
+            上傳照片
+            </summary>
+            <param name="value">店家參數</param>
+            <returns></returns>
         </member>
         <member name="M:WebApplication1.Controllers.ShopController.Post(WebApplication1.Models.Info)">
             <summary>
@@ -101,6 +120,11 @@
         <member name="P:WebApplication1.Models.Info.Location">
             <summary>
             座標
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.Info.ImgUrl">
+            <summary>
+            圖片路徑
             </summary>
         </member>
     </members>

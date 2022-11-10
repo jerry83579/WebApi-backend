@@ -50,6 +50,10 @@ namespace WebApplication1.Models
                 entity.Property(e => e.Price)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.Property(e => e.ImgUrl)
+                  .HasMaxLength(50)
+                  .IsUnicode(false);
             });
         }
     }

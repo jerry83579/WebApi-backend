@@ -276,7 +276,6 @@ D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win-x
 D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
-D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.AssemblyReference.cache
 D:\cSharp\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.GeneratedMSBuildEditorConfig.editorconfig
 D:\cSharp\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.AssemblyInfoInputs.cache
@@ -295,3 +294,11 @@ D:\cSharp\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication
 D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.Web.Http.dll
 D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll

@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using NetTopologySuite.Geometries;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using WebApplication1.Models;
 
@@ -16,10 +19,60 @@ namespace WebApplication1.Controllers
     public class ShopController : ControllerBase
     {
         private readonly Models.ShopController _context;
+        private readonly IConfiguration _config;
+        private readonly Config _memberConfig;
 
-        public ShopController(Models.ShopController context)
+        public ShopController(Models.ShopController context, IConfiguration config)
         {
             _context = context;
+            _config = config;
+            _memberConfig = new Config
+            {
+                ImgPath = _config.GetValue<string>("Path:ImgPath"),
+                NotFoundPath = _config.GetValue<string>("Path:NotFoundPath")
+            };
+        }
+
+        /// <summary>
+        /// 預覽照片
+        /// </summary>
+        /// <param name="id">圖片對應的店家編號</param>
+        [Route("get/previewImg/{id}")]
+        [HttpGet]
+        public IActionResult GetPreviewImg(int id)
+        {
+            DbSet<Info> result = _context.Info;
+            var data = result.Single(x => x.Id == id);
+            string imgUrl = data.ImgUrl;
+            string path = string.Format(@"{0}\{1}", this._memberConfig.ImgPath, imgUrl);
+            if (System.IO.File.Exists(path))
+            {
+                var image = System.IO.File.OpenRead(path);
+                return File(image, "image/jpeg");
+            }
+            else
+            {
+                string notFoundPath = string.Format(@"{0}", _memberConfig.NotFoundPath);
+                var image = System.IO.File.OpenRead(notFoundPath);
+                return File(image, "image/jpeg");
+            }
+        }
+
+        /// <summary>
+        /// 刪除照片
+        /// </summary>
+        /// <param name="id">圖片對應的店家編號</param>
+        [Route("deleteImg/{id}")]
+        [HttpGet]
+        public IActionResult DeleteImg(int id)
+        {
+            DbSet<Info> result = _context.Info;
+            Info Data = result.Single(x => x.Id == id);
+            Data.ImgUrl = null;
+            _context.SaveChanges();
+            string notFoundPath = string.Format(@"{0}", _memberConfig.NotFoundPath);
+            var image = System.IO.File.OpenRead(notFoundPath);
+            return File(image, "image/jpeg");
         }
 
         /// <summary>
@@ -51,6 +104,17 @@ namespace WebApplication1.Controllers
                 _context.Info.Remove(Data);
             }
             _context.SaveChanges();
+        }
+
+        /// <summary>
+        /// 上傳照片
+        /// </summary>
+        /// <param name="value">店家參數</param>
+        /// <returns></returns>
+        [Route("post/uploadImg")]
+        [HttpPost]
+        public void UploadImg([FromBody] Info value)
+        {
         }
 
         /// <summary>
