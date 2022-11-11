@@ -4,6 +4,7 @@ D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\a
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\WebApplication1.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\WebApplication1.runtimeconfig.json
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\WebApplication1.pdb
+D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Aspose.GIS.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\System.Net.Http.Formatting.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\System.Web.Http.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Razor.Language.dll
@@ -25,8 +26,13 @@ D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\M
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Configuration.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Configuration.Binder.dll
+D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Configuration.Json.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.DependencyInjection.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.FileProviders.Physical.dll
+D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.FileSystemGlobbing.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Logging.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Logging.Abstractions.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Options.dll
@@ -67,7 +73,9 @@ D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\S
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\System.Diagnostics.DiagnosticSource.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\System.Runtime.Caching.dll
+D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\System.Runtime.CompilerServices.Unsafe.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
+D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\System.Text.Encodings.Web.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\System.Text.Json.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\cs\Microsoft.CodeAnalysis.resources.dll
 D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\PubTmp\Out\de\Microsoft.CodeAnalysis.resources.dll

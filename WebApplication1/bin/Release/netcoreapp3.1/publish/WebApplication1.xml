@@ -4,5 +4,129 @@
         <name>WebApplication1</name>
     </assembly>
     <members>
+        <member name="M:WebApplication1.Controllers.ShopController.GetPreviewImg(System.Int32)">
+            <summary>
+            預覽照片
+            </summary>
+            <param name="id">圖片對應的店家編號</param>
+        </member>
+        <member name="M:WebApplication1.Controllers.ShopController.DeleteImg(System.Int32)">
+            <summary>
+            刪除照片
+            </summary>
+            <param name="id">圖片對應的店家編號</param>
+        </member>
+        <member name="M:WebApplication1.Controllers.ShopController.Get">
+            <summary>
+            讀取店家資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.ShopController.Delete(System.String)">
+            <summary>
+            刪除店家資料
+            </summary>
+            <param name="ids">單個或多個店家編號，例如: id1,id2,id3...</param>
+        </member>
+        <member name="M:WebApplication1.Controllers.ShopController.UploadImgAsync(Microsoft.AspNetCore.Http.IFormFile,System.Int32)">
+            <summary>
+            上傳照片
+            </summary>
+            <param name="files">表單數據</param>
+            <param name="id">店家編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.ShopController.Post(WebApplication1.Models.Info)">
+            <summary>
+            新增店家資料
+            </summary>
+            <param name="value">店家參數</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.ShopController.Put(WebApplication1.Models.Info,System.Int32)">
+            <summary>
+            修改店家資料
+            </summary>
+            <param name="value">店家參數</param>
+            <param name="id">店家編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.ShopController.PostCompoundQuery(WebApplication1.Models.ComplexQuery)">
+            <summary>
+            複合式查詢
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:WebApplication1.Models.ComplexQuery.Area">
+            <summary>
+            區域
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.ComplexQuery.Category">
+            <summary>
+            商品種類
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.ComplexQuery.Price">
+            <summary>
+            價格低於
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.ComplexQuery.Keyword">
+            <summary>
+            關鍵字
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.Info">
+            <summary>
+            店家資訊
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.Info.Id">
+            <summary>
+            店家編號
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.Info.Category">
+            <summary>
+            商品種類
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.Info.Price">
+            <summary>
+            商品價格
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.Info.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.Info.Phone">
+            <summary>
+            電話
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.Info.Lat">
+            <summary>
+            緯度
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.Info.Longitude">
+            <summary>
+            經度
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.Info.Location">
+            <summary>
+            座標
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.Info.ImgUrl">
+            <summary>
+            圖片路徑
+            </summary>
+        </member>
     </members>
 </doc>

@@ -40,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Aspose.GIS": {
+              "target": "Package",
+              "version": "[22.10.0, )"
+            },
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.2.9, )"

@@ -148,3 +148,11 @@ D:\cSharp\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\WebApplicati
 D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
 D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\System.Web.Http.dll
 D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\System.Text.Encodings.Web.dll
+D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\Aspose.GIS.dll

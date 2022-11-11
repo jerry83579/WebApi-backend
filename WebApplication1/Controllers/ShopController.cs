@@ -73,6 +73,7 @@ namespace WebApplication1.Controllers
             DbSet<Info> result = _context.Info;
             Info Data = result.Single(x => x.Id == id);
             string path = string.Format(@"{0}\{1}", _memberConfig.ImgPath, Data.ImgUrl);
+            System.IO.File.Delete(path);
             Data.ImgUrl = null;
             _context.SaveChanges();
             string notFoundPath = string.Format(@"{0}", _memberConfig.NotFoundPath);
@@ -115,6 +116,7 @@ namespace WebApplication1.Controllers
         /// 上傳照片
         /// </summary>
         /// <param name="files">表單數據</param>
+        /// <param name="id">店家編號</param>
         /// <returns></returns>
         [Route("post/uploadImg/{id}")]
         [HttpPost]
@@ -122,17 +124,24 @@ namespace WebApplication1.Controllers
         {
             DbSet<Info> result = _context.Info;
             // 讀取照片資料流存取並創建照片到伺服器位置
-            string fileName = files.FileName;
-            string path = string.Format(@"{0}\{1}", _memberConfig.ImgPath, fileName);
+            string extension = Path.GetExtension(files.FileName);
+            string fileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            string path = string.Format(@"{0}\{1}{2}", _memberConfig.ImgPath, fileName, extension);
             try
             {
                 using (var stream = new FileStream(path, FileMode.Create))
                 {
                     await files.CopyToAsync(stream);
                 }
-                // 上傳新的照片路徑到資料庫
+
                 var data = result.Single(x => x.Id == id);
-                data.ImgUrl = fileName;
+                // 刪除舊的照片
+                if (!string.IsNullOrEmpty(data.ImgUrl))
+                {
+                    System.IO.File.Delete(string.Format(@"{0}\{1}", _memberConfig.ImgPath, data.ImgUrl));
+                }
+                // 上傳新的照片路徑到資料庫
+                data.ImgUrl = string.Format(@"{0}{1}", fileName, extension);
                 _context.SaveChanges();
                 // 回傳照片
                 var image = System.IO.File.OpenRead(path);

@@ -33,6 +33,7 @@
             上傳照片
             </summary>
             <param name="files">表單數據</param>
+            <param name="id">店家編號</param>
             <returns></returns>
         </member>
         <member name="M:WebApplication1.Controllers.ShopController.Post(WebApplication1.Models.Info)">

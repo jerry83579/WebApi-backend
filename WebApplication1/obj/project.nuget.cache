@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "sSS6E4URFQ+sR9QaO4vcv8mCd8BiXA6+rDXdw3EVxVNrqtFTGC5MU5thGMXr88F+/WU75L8kRFcs98wBQ++OfA==",
+  "dgSpecHash": "ZPi6rxZreJECGS3NjEQAX30SyyvUAJaLcEPSa5AcI7pVgtjp3MjprCqqugPYw+pf+VyuSV6TJg4ct8HWp0WpbQ==",
   "success": true,
   "projectFilePath": "D:\\cSharp\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Jerry83579\\.nuget\\packages\\aspose.gis\\22.10.0\\aspose.gis.22.10.0.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.9\\microsoft.aspnet.webapi.core.5.2.9.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
@@ -69,6 +70,7 @@
     "C:\\Users\\Jerry83579\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.5\\microsoft.visualstudio.web.codegenerators.mvc.3.1.5.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Jerry83579\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\nettopologysuite\\2.0.0\\nettopologysuite.2.0.0.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\nettopologysuite.features\\2.1.0\\nettopologysuite.features.2.1.0.nupkg.sha512",
@@ -125,6 +127,7 @@
     "C:\\Users\\Jerry83579\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
+    "C:\\Users\\Jerry83579\\.nuget\\packages\\system.drawing.common\\4.5.1\\system.drawing.common.4.5.1.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\system.globalization.calendars\\4.3.0\\system.globalization.calendars.4.3.0.nupkg.sha512",
     "C:\\Users\\Jerry83579\\.nuget\\packages\\system.globalization.extensions\\4.3.0\\system.globalization.extensions.4.3.0.nupkg.sha512",

@@ -31,6 +31,7 @@
     ".NETCoreApp,Version=v3.1": {
       "WebApplication1/1.0.0": {
         "dependencies": {
+          "Aspose.GIS": "22.10.0",
           "Microsoft.AspNet.WebApi.Core": "5.2.9",
           "Microsoft.AspNetCore.Cors": "2.2.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.25",
@@ -309,6 +310,20 @@
         },
         "compile": {
           "WebApplication1.dll": {}
+        }
+      },
+      "Aspose.GIS/22.10.0": {
+        "dependencies": {
+          "System.Drawing.Common": "4.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aspose.GIS.dll": {
+            "assemblyVersion": "22.10.0.0",
+            "fileVersion": "22.10.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Aspose.GIS.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.9": {
@@ -1276,6 +1291,11 @@
           "System.Security.Principal.Windows": "4.5.0"
         }
       },
+      "Microsoft.Win32.SystemEvents/4.5.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.1.2"
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.2",
@@ -1831,6 +1851,15 @@
           "Microsoft.NETCore.Platforms": "2.1.2",
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Drawing.Common/4.5.1": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.1.2",
+          "Microsoft.Win32.SystemEvents": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
       "System.Globalization/4.3.0": {
@@ -4120,6 +4149,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Aspose.GIS/22.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WAqih57x46toVKY7mK/TFoQr9pqcFs4fGljv9PesP4CzqfItVVvhIJaqOOjLR5e65EKLntnF/5AY1C5LkvDO8Q==",
+      "path": "aspose.gis/22.10.0",
+      "hashPath": "aspose.gis.22.10.0.nupkg.sha512"
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.9": {
       "type": "package",
       "serviceable": true,
@@ -4575,6 +4611,13 @@
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
     },
+    "Microsoft.Win32.SystemEvents/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LuI1oG+24TUj1ZRQQjM5Ew73BKnZE5NZ/7eAdh1o8ST5dPhUnJvIkiIn2re3MwnkRy6ELRnvEbBxHP8uALKhJw==",
+      "path": "microsoft.win32.systemevents/4.5.0",
+      "hashPath": "microsoft.win32.systemevents.4.5.0.nupkg.sha512"
+    },
     "NETStandard.Library/1.6.1": {
       "type": "package",
       "serviceable": true,
@@ -4966,6 +5009,13 @@
       "sha512": "sha512-rswfv0f/Cqkh78rA5S8eN8Neocz234+emGCtTF3lxPY96F+mmmUen6tbn0glN6PMvlKQb9bPAY5e9u7fgPTkKw==",
       "path": "system.diagnostics.tracing/4.3.0",
       "hashPath": "system.diagnostics.tracing.4.3.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GiyeGi/v4xYDz1vCNFwFvhz9k1XddOG7VD3jxRqzRBCbTHji+s3HxxbxtoymuK4OadEpgotI8zQ5+GEEH9sUEQ==",
+      "path": "system.drawing.common/4.5.1",
+      "hashPath": "system.drawing.common.4.5.1.nupkg.sha512"
     },
     "System.Globalization/4.3.0": {
       "type": "package",

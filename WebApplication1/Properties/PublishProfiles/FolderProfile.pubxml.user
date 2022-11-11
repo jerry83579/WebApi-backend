@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>D:\cSharp\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
-    <History>True|2022-10-25T02:50:40.4707133Z;</History>
+    <History>True|2022-11-11T05:33:04.7455377Z;True|2022-11-10T17:31:29.4114757+08:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
