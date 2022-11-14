@@ -73,7 +73,10 @@ namespace WebApplication1.Controllers
             DbSet<Info> result = _context.Info;
             Info Data = result.Single(x => x.Id == id);
             string path = string.Format(@"{0}\{1}", _memberConfig.ImgPath, Data.ImgUrl);
-            System.IO.File.Delete(path);
+            if (System.IO.File.Exists(path))
+            {
+                System.IO.File.Delete(path);
+            }
             Data.ImgUrl = null;
             _context.SaveChanges();
             string notFoundPath = string.Format(@"{0}", _memberConfig.NotFoundPath);
@@ -107,6 +110,12 @@ namespace WebApplication1.Controllers
             foreach (string id in roomIds)
             {
                 Info Data = result.Single(x => x.Id == Convert.ToInt32(id));
+                string path = string.Format(@"{0}\{1}", _memberConfig.ImgPath, Data.ImgUrl);
+                if (System.IO.File.Exists(path))
+                {
+                    System.IO.File.Delete(path);
+                }
+                Data.ImgUrl = null;
                 _context.Info.Remove(Data);
             }
             _context.SaveChanges();
