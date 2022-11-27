@@ -25,7 +25,7 @@ namespace WebApplication1.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=USER79-PC;Database=Restaurant;Trusted_Connection=True;MultipleActiveResultSets=true;User ID=taolin/Jerry;Password=1023", x => x.UseNetTopologySuite());
+                optionsBuilder.UseSqlServer("Server=192.168.68.116;Database=Restaurant;Trusted_Connection=True;MultipleActiveResultSets=true;User ID=Jerry83579;Password=1023", x => x.UseNetTopologySuite());
             }
         }
 

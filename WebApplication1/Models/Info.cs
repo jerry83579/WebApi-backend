@@ -17,7 +17,6 @@ namespace WebApplication1.Models
         /// <summary>
         /// 店家編號
         /// </summary>
-        [Required]
         public int Id { get; set; }
 
         /// <summary>

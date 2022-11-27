@@ -2,9 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
 	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
 	  <NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helpers\**" />
+    <Compile Remove="Models\Request\**" />
+    <Content Remove="Helpers\**" />
+    <Content Remove="Models\Request\**" />
+    <EmbeddedResource Remove="Helpers\**" />
+    <EmbeddedResource Remove="Models\Request\**" />
+    <None Remove="Helpers\**" />
+    <None Remove="Models\Request\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspose.GIS" Version="22.10.0" />
@@ -22,11 +34,6 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="ProjNet" Version="2.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-    <Folder Include="Models\Request\" />
   </ItemGroup>
 
 
